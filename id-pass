@@ -1,3 +1,6 @@
 use this id and pass to login to the mediabook
 email:ankurjayant12@gmail.com
 password:Entertainment
+
+I've made a static demo data in the media.json file for now.
+I will store media files on the database soon.
