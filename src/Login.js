@@ -38,6 +38,8 @@ class Login extends React.Component{
         }).then((u)=>{console.log(u)})
         .catch((error) => {
             console.log(error);
+            let errormessage=document.getElementById('message')
+            errormessage.innerHTML=error
           })
       }
       render(){
