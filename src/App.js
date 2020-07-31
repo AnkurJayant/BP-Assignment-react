@@ -9,15 +9,16 @@ class App extends React.Component {
     super(props);
     this.state={
       user:{},
+      loaded:false
     }
     this.authListener=this.authListener.bind(this)
   }
   authListener=()=>{
     fire.auth().onAuthStateChanged((user)=>{
       if(user){
-        this.setState({user:user})
+        this.setState({user:user,loaded:true})
       }else{
-        this.setState({user:null})
+        this.setState({user:null,loaded:true})
       }
     })      
   }
@@ -28,7 +29,9 @@ class App extends React.Component {
   render(){        
       return (
         <div className="App" style={{background:"white"}}>
-          {this.state.user ? (<Home/>):(<Login/>)}
+          {
+          this.state.user && this.state.loaded ? (<Home/>):(<Login/>)            
+        }
         </div>
       );
     
